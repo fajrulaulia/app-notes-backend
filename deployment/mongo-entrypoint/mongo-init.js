@@ -19,8 +19,8 @@ dba.app_config.insert({
     author: "fajrul aulia"
 });
 
-db.Books.insert( {
+db.Notes.insert( {
   title:"Sejarah Tuhan",
-  author:"Karen Amstrong",
-  category:"Filsafat"
+  content:"Karen Amstrong",
+  thumbnail:"https://developer.android.com/studio/videos/home/layout-editor-poster.png"
  })

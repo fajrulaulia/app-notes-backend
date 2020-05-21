@@ -1,13 +1,13 @@
 const express = require('express')
 const route = express.Router()
 
-const Books = require('./controllers/bookController')
+const Notes = require('./controllers/notesController')
 route
     .get("/", (_,res)=> res.json({"message":"this backend created by fajrul aulia"}))
 
-    //books route
-    .post("/books", Books.insert)
-    .get("/books", Books.findAll)
-    .get("/book/:id", Books.findOne)
+    //books Notes
+    .post("/notes", Notes.insert)
+    .get("/notes", Notes.findAll)
+    .get("/note/:id", Notes.findOne)
 
 module.exports = route

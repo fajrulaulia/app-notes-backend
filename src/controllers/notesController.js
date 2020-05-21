@@ -1,7 +1,7 @@
-const Book = require('../models/bookModel')
+const Notes = require('../models/notesModel')
 module.exports = {
     findAll: (_, res) => {
-        Book.find((err, doc) => {
+        Notes.find((err, doc) => {
             if (err) res.status(500).json({ message: 'Error Request' })
             res.status(200).json({
                 data: doc,
@@ -11,7 +11,7 @@ module.exports = {
         });
     },
     findOne: (req, res) => {
-        Book.findOne({ _id: req.params.id }, (err, doc) => {
+        Notes.findOne({ _id: req.params.id }, (err, doc) => {
             if (doc === "" || err) {
                 res.status(404).json({ message: 'Data not found !!' })
             } else {
@@ -21,13 +21,12 @@ module.exports = {
     },
 
     insert: (req, res) => {
-        for (let i = 0; i < req.body.length; i++) {
-            Book(req.body[i]).save((err, book) => {
-                if (err) console.error(err);
-            });
-        }
-        res.status(200).json({ message: 'data Inserted' })
-
-
+        Notes(req.body).save((err, doc) => {
+            if (err) console.error(err);
+            res.status(200).json({ 
+                lastInsertedId:doc._id,
+                message: 'data Inserted'
+             })
+        });
     }
 }
