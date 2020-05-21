@@ -9,15 +9,23 @@ class database {
             process.env.MONGO_PWD,
             process.env.MONGO_DB,
         ]
+        
         let strConn = `mongodb://${param[2]}:${param[3]}@${param[0]}:${param[1]}/${param[4]}`
         if (process.env.IS_MONGO_CONTAINER && process.env.IS_MONGO_CONTAINER === 'true') {
             strConn = `mongodb://${param[2]}:${param[3]}@${param[0]}:${param[1]}/${param[4]}`
         }
 
-        mongoose.connect(strConn, { useUnifiedTopology: true, useNewUrlParser: true });
-        const connection = mongoose.connection;
-        connection.once("open", () => {
-            console.log("MongoDB database connection established successfully");
+        mongoose.connect(
+            strConn,{
+                useNewUrlParser: true,
+                useCreateIndex: true,
+                useFindAndModify: false,
+                useUnifiedTopology: true
+            }
+        )
+        .then(console.log('DB Connection Successfull'))
+        .catch((err) => {
+            console.error(err);
         });
     }
 }
