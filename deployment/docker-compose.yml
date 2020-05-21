@@ -5,10 +5,12 @@ services:
         image:  'mongo:latest'
         container_name: 'app_database'
         environment: 
-            - MONGO_INITDB_ROOT_USERNAME=fajrul
-            - MONGO_INITDB_ROOT_PASSWORD=aulia
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: oort
+            MONGO_INITDB_DATABASE: fajruldb
+        command: mongod
         volumes: 
-            - ./mongo-init.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+            - ./mongo-entrypoint:/docker-entrypoint-initdb.d/
         ports:
             - '27017:27017'
         restart: always
@@ -20,10 +22,10 @@ services:
         depends_on:
             - app_database
         environment:
-         - ME_CONFIG_MONGODB_ADMINUSERNAME=fajrul
-         - ME_CONFIG_MONGODB_ADMINPASSWORD=aulia
+         - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+         - ME_CONFIG_MONGODB_ADMINPASSWORD=oort
          - ME_CONFIG_MONGODB_SERVER=app_database
          - ME_CONFIG_BASICAUTH_USERNAME=admin
-         - ME_CONFIG_BASICAUTH_PASSWORD=admin
+         - ME_CONFIG_BASICAUTH_PASSWORD=nomad
         ports:
          - '8081:8081'
