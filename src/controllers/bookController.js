@@ -1,11 +1,21 @@
 const Book = require('../models/bookModel')
 module.exports = {
     findAll: (_, res) => {
-        Book.find((err,document)=>{
-            if (err){
-                console.log(err)
+        Book.find((err, doc) => {
+            if (err) res.status(500).json({ message: 'Error Request' })
+            res.status(200).json({
+                data: doc,
+                total: doc.length
+            })
+
+        });
+    },
+    findOne: (req, res) => {
+        Book.findOne({_id: req.params.id},(err, doc) => {
+            if(doc === "" || err){
+                res.status(404).json({ message: 'Data not found !!' })
             }else{
-                res.json(document)
+                res.status(200).json(doc)
             }
         });
     }
