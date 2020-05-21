@@ -2,15 +2,21 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 class database {
     async connect() {
-        let strConn = 'mongodb://user1:user1@localhost:27017/fajruldb'
-
-        if (process.env.DATABASE_URL != undefined) {
-            strConn = 'mongodb://user1:user1@app_database:27017/fajruldb'
+        const param = [
+            process.env.MONGO_HOST,
+            process.env.MONGO_PORT,
+            process.env.MONGO_USER,
+            process.env.MONGO_PWD,
+            process.env.MONGO_DB,
+        ]
+        let strConn = `mongodb://${param[2]}:${param[3]}@${param[0]}:${param[1]}/${param[4]}`
+        if (process.env.IS_MONGO_CONTAINER && process.env.IS_MONGO_CONTAINER === 'true') {
+            strConn = `mongodb://${param[2]}:${param[3]}@${param[0]}:${param[1]}/${param[4]}`
         }
 
         mongoose.connect(strConn, { useUnifiedTopology: true, useNewUrlParser: true });
         const connection = mongoose.connection;
-        connection.once("open", function () {
+        connection.once("open", () => {
             console.log("MongoDB database connection established successfully");
         });
     }

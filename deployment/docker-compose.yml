@@ -1,15 +1,20 @@
 version: '3'
 
 services: 
-
     app_backend:
         image: faaa/backend 
+        container_name: 'app_backend'
         ports:
           - "8080:8080"
         depends_on:
           - app_database
-        environment:
-          DATABASE_URL: postgres://todoapp@postgres/todos
+        environment: 
+          - IS_MONGO_CONTAINER=true
+          - MONGO_HOST=app_database
+          - MONGO_PORT=27017
+          - MONGO_USER=user1
+          - MONGO_PWD=user1
+          - MONGO_DB=fajruldb
 
     app_database:
         image:  'mongo:latest'
