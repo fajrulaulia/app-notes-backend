@@ -1,8 +1,8 @@
-db.auth('fajrul', 'aulia')
+db.auth('root', 'oort')
 
-db = db.getSiblingDB('fajruldb')
+dba = db.getSiblingDB('fajruldb')
 
-db.createUser({
+dba.createUser({
   user: 'user1',
   pwd: 'user1',
   roles: [
@@ -13,14 +13,14 @@ db.createUser({
   ],
 });
 
-db.app_config.insert({
+dba.app_config.insert({
     name: "DB Learning",
     version: "0.1",
     author: "fajrul aulia"
 });
 
 db.Books.insert( {
-  name:"Sejarah Tuhan",
-  version:"1.0",
-  author:"Karen Amstrong"
- } )
+  title:"Sejarah Tuhan",
+  author:"Karen Amstrong",
+  category:"Filsafat"
+ })

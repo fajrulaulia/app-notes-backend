@@ -1,6 +1,16 @@
 version: '3'
 
 services: 
+
+    app_backend:
+        image: faaa/backend 
+        ports:
+          - "8080:8080"
+        depends_on:
+          - app_database
+        environment:
+          DATABASE_URL: postgres://todoapp@postgres/todos
+
     app_database:
         image:  'mongo:latest'
         container_name: 'app_database'

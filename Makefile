@@ -1,5 +1,6 @@
 app_start:
-	 docker-compose -f "deployment/docker-compose.yml" up -d --build --force-recreate
+	make build
+	docker-compose -f "deployment/docker-compose.yml" up -d --build --force-recreate
 
 app_stop:
 	docker stop app_manager
@@ -21,3 +22,6 @@ clear_data :
 	make app_stop
 	sudo chmod +x clean.sh
 	./clean.sh
+
+build:
+	docker build -t faaa/backend -f deployment/Dockerfile .
