@@ -1,4 +1,5 @@
-const Notes = require('../models/notesModel')
+const Notes = require('../models/Notes')
+
 module.exports = {
     findAll: (_, res) => {
         Notes.find((err, doc) => {
@@ -23,10 +24,10 @@ module.exports = {
     insert: (req, res) => {
         Notes(req.body).save((err, doc) => {
             if (err) console.error(err);
-            res.status(200).json({ 
-                lastInsertedId:doc._id,
+            res.status(200).json({
+                lastInsertedId: doc._id,
                 message: 'data Inserted'
-             })
+            })
         });
     }
 }
