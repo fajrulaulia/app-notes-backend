@@ -6,7 +6,7 @@ var Book = new Schema({
   author  : String,
   category: String,
 },
-{ collection: "Books" }
+{ collection: "Books", versionKey: false}
 );
 
 module.exports = mongoose.model('Books', Book );

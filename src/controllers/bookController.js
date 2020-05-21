@@ -11,12 +11,23 @@ module.exports = {
         });
     },
     findOne: (req, res) => {
-        Book.findOne({_id: req.params.id},(err, doc) => {
-            if(doc === "" || err){
+        Book.findOne({ _id: req.params.id }, (err, doc) => {
+            if (doc === "" || err) {
                 res.status(404).json({ message: 'Data not found !!' })
-            }else{
+            } else {
                 res.status(200).json(doc)
             }
         });
+    },
+
+    insert: (req, res) => {
+        for (let i = 0; i < req.body.length; i++) {
+            Book(req.body[i]).save((err, book) => {
+                if (err) console.error(err);
+            });
+        }
+        res.status(200).json({ message: 'data Inserted' })
+
+
     }
 }
