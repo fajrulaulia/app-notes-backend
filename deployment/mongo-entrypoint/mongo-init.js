@@ -15,6 +15,12 @@ db.createUser({
 
 db.app_config.insert({
     name: "DB Learning",
-    version: 0.1,
+    version: "0.1",
     author: "fajrul aulia"
 });
+
+db.Books.insert( {
+  name:"Sejarah Tuhan",
+  version:"1.0",
+  author:"Karen Amstrong"
+ } )
