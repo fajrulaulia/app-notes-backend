@@ -31,7 +31,7 @@ clean :
 	./scripts/clean.sh
 
 build-backend:
-	docker build -t faaa/backend -f deployment/Dockerfile .
+	docker build -t faaa_expmongo/backend -f deployment/Dockerfile .
 
 build-db:
 	docker-compose -f "deployment/docker-compose.yml" up -d --build --force-recreate app_database
