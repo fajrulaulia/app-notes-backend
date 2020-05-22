@@ -9,5 +9,7 @@ route
     .post("/notes", Notes.insert)
     .get("/notes", Notes.findAll)
     .get("/note/:id", Notes.findOne)
+    .put("/note/:id", Notes.update)
+    .delete("/note/:id", Notes.delete)
 
 module.exports = route
