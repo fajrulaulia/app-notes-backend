@@ -26,7 +26,8 @@ exec_backend :
 	docker exec -it app_backend sh
 
 clean :
-	make app_stop
+	docker stop app_manager
+	docker stop app_database
 	sudo chmod +x scripts/clean.sh
 	./scripts/clean.sh
 

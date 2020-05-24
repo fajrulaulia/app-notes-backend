@@ -2,23 +2,20 @@ const jwt = require('jsonwebtoken')
 
 const token = {
     create: (payload) => {
+        const newPayload={
+            _id:payload._id,
+            email:payload.email,
+            phonenumber:payload.phonenumber,
+            username:payload.username
+        }
         return jwt.sign({
             exp: Math.floor(Date.now() / 1000) + (60 * 60),
-            data: payload
+            data: newPayload
         }, 'secret');
     },
 
     decodeToken: (bearerToken) => {
-        const result = {}
-        jwt.verify(bearerToken, 'secret', (err, decoded) => {
-            if (err){
-                result.err= err
-            }else{
-                result.succes=decoded
-            }
-            console.log(result)
-            return result
-        })
+       return jwt.verify(bearerToken, 'secret')
     }
 }
 
