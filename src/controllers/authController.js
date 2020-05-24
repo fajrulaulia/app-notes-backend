@@ -9,8 +9,16 @@ module.exports = {
   Auth: (req, res) => {
     const bearerToken = (req.headers['authorization'] != null || req.headers['authorization'] != undefined) &&
       req.headers['authorization'].split(' ') ? req.headers['authorization'].split(' ')[1] : '';
-    res.status(200).json(Response.success("Success Create User"))
-
+      let data = Token.decodeToken(bearerToken).data._id
+      Auth.findOne({ _id: data }, (err, doc) => {
+        if (err && doc != undefined) {
+          res.status(500).json(Response.error("Failed When Retriving Current User")).end()
+        } else if (doc == undefined) {
+          res.status(401).json(Response.success("Current User", doc)).end()
+        } else {
+          res.status(200).json(Response.success("Current User", doc)).end()
+        }
+      })
   },
   register: (req, res) => {
     req.body.password = Password.create(req.body.password)
