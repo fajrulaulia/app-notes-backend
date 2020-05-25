@@ -6,7 +6,13 @@ const Notes = new Schema({
   content: String,
   thumbnail: Object,
   created_at: Date,
-  update_at: Date
+  update_at: Date,
+  auth: {
+
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Auth'
+  }
+
 },
   { collection: "Notes", versionKey: false }
 );
