@@ -1,12 +1,13 @@
-# nodejs-mongodb
-nodejs-mongodb is a backend module used for backend development in a client environment, is powerful and clean code, this backend using NodeJs, Express and MongoDD.
+# GeulanteuJS
+GeulanteuJS is a backend module used for backend development in a client environment,
+is powerful and clean code, this module using NodeJs, Express and MongoDB(Mongoose).
 
 
 ## Installation
 Make sure you system Installed `docker` `docker-compose` `nodejs` `make` `npm` `yarn`
 ```bash
-git clone https://github.com/fajrulaulia/nodejs-mongodb
-cd nodejs-mongodb
+git clone https://github.com/fajrulaulia/geulanteujs
+cd geulanteujs
 yarn
 yarn start
 ```
@@ -14,8 +15,8 @@ yarn start
 ## Usage
 
 ```bash
-git clone https://github.com/fajrulaulia/nodejs-mongodb
-cd nodejs-mongodb
+git clone geulanteujs
+cd geulanteujs
 make app_start
 ```
 
