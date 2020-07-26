@@ -5,8 +5,8 @@ is a Backend engine using NodeJs, Express and MongoDB.
 ## Installation
 Make sure you system Installed `docker` `docker-compose` `nodejs` `make` `npm` `yarn`
 ```bash
-git clone https://github.com/fajrulaulia/wispy-pond-1798
-cd wispy-pond-1798
+git clone https://github.com/fajrulaulia/nodejs-mongodb
+cd nodejs-mongodb
 yarn
 yarn start
 ```
@@ -14,8 +14,8 @@ yarn start
 ## Usage
 
 ```bash
-git clone https://github.com/fajrulaulia/wispy-pond-1798
-cd wispy-pond-1798
+git clone https://github.com/fajrulaulia/nodejs-mongodb
+cd nodejs-mongodb
 make app_start
 ```
 
