@@ -1,5 +1,5 @@
 # nodejs-mongodb
-is a Backend engine using NodeJs, Express and MongoDB.
+nodejs-mongodb is a backend module used for backend development in a client environment, is powerful and clean code, this backend using NodeJs, Express and MongoDD.
 
 
 ## Installation
@@ -21,7 +21,6 @@ make app_start
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
 Please make sure to update tests as appropriate.
 
 ## License
