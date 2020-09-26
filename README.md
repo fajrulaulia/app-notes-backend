@@ -1,6 +1,5 @@
 # GeulanteuJS
-GeulanteuJS is a backend module used for backend development in a client environment,
-is powerful and clean code, this module using NodeJs, Express and MongoDB(Mongoose).
+GeulanteuJS is a backend module wrriten by Javascrip,easy and integrated with contaner as service.
 
 
 ## Installation
@@ -9,16 +8,13 @@ Make sure you system Installed `docker` `docker-compose` `nodejs` `make` `npm` `
 git clone https://github.com/fajrulaulia/geulanteujs
 cd geulanteujs
 yarn
-yarn start
 ```
 
 ## Usage
-
-```bash
-git clone geulanteujs
-cd geulanteujs
-make app_start
-```
+- `make app_start` : Build and Run Backend adn Service
+- `make app_stop`  : stop Backend adn Service 
+- `make build-db`  : Build MongoDB for development
+- `yarn start`     : Run Backend Locally for development 
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
