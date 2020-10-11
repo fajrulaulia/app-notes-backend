@@ -1,26 +1,27 @@
-# GeulanteuJS
-GeulanteuJS is a backend module wrriten by Javascrip,easy and integrated with contaner as service.
+# app-notes-backend
+app-notes-backend is a backend module wrriten by Javascrip,easy and integrated with contaner as service.
 
 ## System requirements
-  - bash
-  - make
-  - docker
-  - docker-compose
-  - git
-  - nodejs (running on development)
+  - `bash`
+  - `make`
+  - `docker`
+  - `docker-compose`
+  - `git`
+  - `nodejs` (running on development)
 
 ## Installation  
 ```bash
-git clone https://github.com/fajrulaulia/geulanteujs
-cd geulanteujs
+git https://github.com/fajrulaulia/app-notes-backend.git
+cd app-notes-backend
+make build-db
 yarn
 ```
 
 ## Usage
-- `make app_start` : Build and Run Backend and Service
-- `make app_stop`  : stop Backend and Service 
-- `make build-db`  : Build MongoDB for development
-- `yarn start`     : Run Backend Locally for development 
+- `make app_start` : build and Run backend and service
+- `make app_stop`  : stop backend and service 
+- `make build-db`  : build mongodb for development
+- `yarn start`     : run backend locally for development
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
