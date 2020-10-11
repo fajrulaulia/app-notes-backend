@@ -1,5 +1,5 @@
 # app-notes-backend
-app-notes-backend is a backend module wrriten by Javascrip,easy and integrated with contaner as service.
+keumah-backend is a backend module wrriten by Javascrip, easy and integrated with contaner as service.
 
 ## System requirements
   - `bash`
@@ -11,8 +11,8 @@ app-notes-backend is a backend module wrriten by Javascrip,easy and integrated w
 
 ## Installation  
 ```bash
-git https://github.com/fajrulaulia/app-notes-backend.git
-cd app-notes-backend
+git https://github.com/fajrulaulia/keumah-backend.git
+cd keumah-backend
 make build-db
 yarn
 ```
