@@ -11,8 +11,8 @@ notednodmows is a backend module wrriten by Javascript, easy and integrated with
 
 ## Installation  
 ```bash
-git https://github.com/fajrulaulia/keumah-backend-js.git
-cd keumah-backend-js
+git https://github.com/fajrulaulia/notednodmows.git
+cd notednodmows-js
 make build-db
 yarn
 ```
@@ -29,7 +29,7 @@ Please make sure to update tests as appropriate.
 
 ## Author
 Fajrul Aulia
-[twitter](https://twitter.com/fajrulaulia_)
+[Linkedin](https://www.linkedin.com/in/fajrulaulia/)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
